@@ -1,0 +1,27 @@
+{
+  "name": "lllog",
+  "version": "1.0.0",
+  "description": "A minimal logger",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jormaechea@github.com/jormaechea/lllog.git"
+  },
+  "keywords": [
+    "logger",
+    "log",
+    "minimal",
+    "logs",
+    "node",
+    "logging"
+  ],
+  "author": "Joaquín Ormaechea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jormaechea/lllog/issues"
+  },
+  "homepage": "https://github.com/jormaechea/lllog#readme"
+}
