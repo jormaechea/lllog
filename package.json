@@ -1,11 +1,17 @@
 {
   "name": "lllog",
   "version": "1.0.0",
-  "description": "A minimal logger",
+  "description": "A minimal zero-dependency logger",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint ./lib ./tests",
+    "test": "mocha --recursive tests/",
+    "test:ci": "nyc --reporter=html --reporter=text mocha --recursive tests/",
+    "coverage": "nyc npm test"
   },
+  "files": [
+    "/lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://jormaechea@github.com/jormaechea/lllog.git"
@@ -19,9 +25,17 @@
     "logging"
   ],
   "author": "Joaquín Ormaechea",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jormaechea/lllog/issues"
   },
-  "homepage": "https://github.com/jormaechea/lllog#readme"
+  "homepage": "https://github.com/jormaechea/lllog#readme",
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "sinon": "^7.3.2"
+  }
 }
