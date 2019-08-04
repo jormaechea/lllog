@@ -1,6 +1,7 @@
 # LLLog
 
-[![npm version](https://badge.fury.io/js/lllog.svg)](https://www.npmjs.com/package/lllog)
+[![npm version](https://badgen.net/npm/v/lllog)](https://www.npmjs.com/package/lllog)
+[![Install size](https://badgen.net/packagephobia/install/lllog)](https://www.npmjs.com/package/lllog)
 [![Build Status](https://travis-ci.org/jormaechea/lllog.svg?branch=master)](https://travis-ci.org/jormaechea/lllog)
 [![Coverage Status](https://coveralls.io/repos/github/jormaechea/lllog/badge.svg?branch=master)](https://coveralls.io/github/jormaechea/lllog?branch=master)
 
