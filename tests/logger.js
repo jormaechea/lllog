@@ -45,6 +45,7 @@ describe('Logger', () => {
 
 		const logger = loggerGenerator();
 		logger
+			.setMinLevel('info')
 			.setHandler(fakeConsoleHandler)
 			.debug('test');
 
@@ -57,6 +58,7 @@ describe('Logger', () => {
 
 		const logger = loggerGenerator();
 		logger
+			.setMinLevel('info')
 			.setHandler(fakeConsoleHandler)
 			.info('test');
 
@@ -70,6 +72,7 @@ describe('Logger', () => {
 
 		const logger = loggerGenerator();
 		logger
+			.setMinLevel('info')
 			.setHandler(fakeConsoleHandler)
 			.error('test');
 
@@ -83,6 +86,7 @@ describe('Logger', () => {
 
 		const logger = loggerGenerator();
 		logger
+			.setMinLevel('info')
 			.setHandler(fakeConsoleHandler)
 			.error('test', 'foo', 'bar', 'moreFoo');
 
@@ -96,10 +100,33 @@ describe('Logger', () => {
 
 		const logger = loggerGenerator();
 		logger
+			.setMinLevel('info')
 			.setHandler(fakeConsoleHandler)
 			.error('test', 1, ['foo', 1.5], { moreFoo: 'baz', 'x-foo': [] });
 
 		sinon.assert.calledOnce(fakeConsoleHandler.error);
 		sinon.assert.calledWithExactly(fakeConsoleHandler.error, 'test', 1, ['foo', 1.5], { moreFoo: 'baz', 'x-foo': [] });
+	});
+
+	it('Should use min level as a global state', () => {
+
+		const fakeConsoleHandler = sinon.stub(consoleHandler);
+
+		const loggerToSetLevel = loggerGenerator();
+		loggerToSetLevel.setMinLevel('error');
+
+		const logger = loggerGenerator();
+		logger.setHandler(fakeConsoleHandler);
+
+		logger.warn('test', 1, ['foo', 1.5], { moreFoo: 'baz', 'x-foo': [] });
+		sinon.assert.notCalled(fakeConsoleHandler.warn);
+
+		// Configure in other logger
+		loggerToSetLevel.setMinLevel('warn');
+
+		logger.warn('test', 1, ['foo', 1.5], { moreFoo: 'baz', 'x-foo': [] });
+
+		sinon.assert.calledOnce(fakeConsoleHandler.warn);
+		sinon.assert.calledWithExactly(fakeConsoleHandler.warn, 'test', 1, ['foo', 1.5], { moreFoo: 'baz', 'x-foo': [] });
 	});
 });
