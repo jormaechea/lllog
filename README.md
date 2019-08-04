@@ -1,9 +1,10 @@
 # LLLog
 
+[![npm version](https://badge.fury.io/js/lllog.svg)](https://www.npmjs.com/package/lllog)
 [![Build Status](https://travis-ci.org/jormaechea/lllog.svg?branch=master)](https://travis-ci.org/jormaechea/lllog)
 [![Coverage Status](https://coveralls.io/repos/github/jormaechea/lllog/badge.svg?branch=master)](https://coveralls.io/github/jormaechea/lllog?branch=master)
 
-A minimal **zero-dependency** logger
+A minimal **zero-dependency** logger.
 
 ## Install
 
@@ -42,7 +43,7 @@ There are 5 log levels which you can use:
 - `error`
 - `fatal`
 
-You can also use you're own log handler:
+You can also use you're own log handler (it must implement the five log levels in order to prevent your app from crashing):
 
 ```js
 const logger = require('lllog')('error', myHandler);

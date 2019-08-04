@@ -1,8 +1,8 @@
 {
   "name": "lllog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A minimal zero-dependency logger",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "lint": "eslint ./lib ./tests",
     "test": "mocha --recursive tests/",
